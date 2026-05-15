@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球AI心理健康 TOP 10 竞品深度分析</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #05050a;
+  --bg-secondary: #0c0c14;
+  --bg-card: #0f0f1a;
+  --bg-elevated: #14142a;
+  --bg-hover: #1a1a35;
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-default: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.12);
+  --text-primary: #f0f0f8;
+  --text-secondary: #a0a0b8;
+  --text-tertiary: #6a6a82;
+  --accent-purple: #7c5cfc;
+  --accent-purple-soft: rgba(124,92,252,0.12);
+  --accent-cyan: #22d3ee;
+  --accent-cyan-soft: rgba(34,211,238,0.10);
+  --accent-pink: #f472b6;
+  --accent-pink-soft: rgba(244,114,182,0.10);
+  --accent-amber: #fbbf24;
+  --accent-amber-soft: rgba(251,191,36,0.10);
+  --accent-green: #34d399;
+  --accent-green-soft: rgba(52,211,153,0.10);
+  --accent-blue: #60a5fa;
+  --accent-blue-soft: rgba(96,165,250,0.10);
+  --glow-purple: 0 0 80px rgba(124,92,252,0.15);
+  --glow-cyan: 0 0 80px rgba(34,211,238,0.1);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.3), 0 0 0 1px var(--border-subtle);
+  --shadow-glow: 0 8px 40px rgba(124,92,252,0.08);
+  --transition-base: 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: rgba(124,92,252,0.3); }
+
+a { color: inherit; text-decoration: none; }
+
+/* ====== HERO ====== */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 32px 80px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,92,252,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(34,211,238,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(244,114,182,0.05) 0%, transparent 50%);
+}
+
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent);
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 860px; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px 6px 8px;
+  background: var(--accent-purple-soft);
+  border: 1px solid rgba(124,92,252,0.2);
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--accent-purple);
+  margin-bottom: 32px;
+  letter-spacing: 0.02em;
+}
+
+.hero-badge-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent-purple);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.5;transform:scale(0.8)}
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  background: linear-gradient(160deg, #ffffff 20%, #a78bfa 50%, #22d3ee 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+}
+
+.hero-desc {
+  font-size: 1.12rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto 52px;
+  line-height: 1.8;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-metric {
+  background: var(--bg-secondary);
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.hero-metric-val {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.hero-metric-val.purple { color: var(--accent-purple); }
+.hero-metric-val.cyan { color: var(--accent-cyan); }
+.hero-metric-val.pink { color: var(--accent-pink); }
+.hero-metric-val.amber { color: var(--accent-amber); }
+
+.hero-metric-label {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* ====== STICKY NAV ====== */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(5,5,10,0.75);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-scroll {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-scroll::-webkit-scrollbar{display:none}
+
+.nav-pill {
+  flex-shrink: 0;
+  padding: 7px 16px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-tertiary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-base);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.nav-pill:hover { color: var(--text-primary); background: var(--bg-elevated); border-color: var(--border-default); }
+.nav-pill.active { color: #fff; background: var(--accent-purple); border-color: var(--accent-purple); box-shadow: 0 2px 12px rgba(124,92,252,0.3); }
+
+/* ====== LAYOUT ====== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+.main-content { padding: 72px 0; }
+
+/* ====== SECTION TITLE ====== */
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-header h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ====== COMPANY CARD ====== */
+.company-section {
+  margin-bottom: 64px;
+  scroll-margin-top: 72px;
+}
+
+.company-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.company-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Card Header */
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.rank-num {
+  width: 48px; height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.company-title-area { flex: 1; min-width: 200px; }
+
+.company-title-area h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.company-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.chip svg { width: 13px; height: 13px; opacity: 0.5; }
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.status-pill.live { background: var(--accent-green-soft); color: var(--accent-green); }
+.status-pill.ipo { background: var(--accent-amber-soft); color: var(--accent-amber); }
+.status-pill.dead { background: var(--accent-pink-soft); color: var(--accent-pink); }
+.status-pill.hot { background: rgba(251,146,60,0.12); color: #fb923c; }
+
+.status-pill-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-pill.live .status-pill-dot { animation: dotPulse 2s infinite; }
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent-purple), #9b7cfc);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition-base);
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+}
+
+.link-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(124,92,252,0.35); }
+
+.link-btn svg { width: 14px; height: 14px; }
+
+/* Card Body - Tab System */
+.card-body { padding: 0; }
+
+.tab-bar {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar{display:none}
+
+.tab-btn {
+  padding: 14px 18px;
+  border: none;
+  background: none;
+  color: var(--text-tertiary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-base);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.tab-btn:hover { color: var(--text-secondary); }
+.tab-btn.active { color: var(--accent-purple); border-bottom-color: var(--accent-purple); }
+
+.tab-panels { padding: 28px 32px 32px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeUp 0.3s ease; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Analysis Grid */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.grid-full { grid-column: 1 / -1; }
+
+.info-block {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  transition: border-color var(--transition-base);
+}
+
+.info-block:hover { border-color: var(--border-default); }
+
+.info-block-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.info-block-label .icon {
+  width: 20px; height: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+.info-block p, .info-block ul {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.info-block ul { list-style: none; padding: 0; }
+.info-block ul li { padding: 4px 0; display: flex; align-items: flex-start; gap: 8px; }
+.info-block ul li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; margin-top: 9px; flex-shrink: 0; }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+.mini-tag {
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.mini-tag.purple { background: var(--accent-purple-soft); color: #a78bfa; border: 1px solid rgba(124,92,252,0.18); }
+.mini-tag.cyan { background: var(--accent-cyan-soft); color: var(--accent-cyan); border: 1px solid rgba(34,211,238,0.18); }
+.mini-tag.pink { background: var(--accent-pink-soft); color: var(--accent-pink); border: 1px solid rgba(244,114,182,0.18); }
+.mini-tag.amber { background: var(--accent-amber-soft); color: var(--accent-amber); border: 1px solid rgba(251,191,36,0.18); }
+.mini-tag.green { background: var(--accent-green-soft); color: var(--accent-green); border: 1px solid rgba(52,211,153,0.18); }
+.mini-tag.blue { background: var(--accent-blue-soft); color: var(--accent-blue); border: 1px solid rgba(96,165,250,0.18); }
+
+/* Radar / Score Bars */
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.score-label {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  width: 80px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.score-track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 1s cubic-bezier(0.25,1,0.5,1);
+}
+
+.score-val {
+  font-size: 0.78rem;
+  font-weight: 600;
+  width: 28px;
+  text-align: left;
+}
+
+/* Journey Flow */
+.journey-flow {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.journey-step {
+  flex: 1;
+  min-width: 120px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
+  text-align: center;
+  position: relative;
+}
+
+.journey-step-num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.journey-step-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.journey-step-desc {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+
+.journey-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--text-tertiary);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Pricing Card */
+.pricing-highlight {
+  background: linear-gradient(135deg, rgba(124,92,252,0.06), rgba(34,211,238,0.04));
+  border: 1px solid rgba(124,92,252,0.15);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-top: 12px;
+}
+
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pricing-row:last-child { border-bottom: none; }
+
+.pricing-plan { font-size: 0.85rem; font-weight: 500; }
+.pricing-cost { font-size: 0.85rem; font-weight: 600; color: var(--accent-purple); }
+
+/* Moat indicator */
+.moat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.moat-item:last-child { border-bottom: none; }
+
+.moat-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.moat-text { flex: 1; }
+.moat-text strong { font-size: 0.85rem; display: block; margin-bottom: 2px; }
+.moat-text span { font-size: 0.78rem; color: var(--text-tertiary); }
+
+.moat-strength {
+  display: flex;
+  gap: 3px;
+}
+
+.moat-dot {
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.06);
+}
+
+.moat-dot.filled { background: var(--accent-purple); }
+.moat-dot.filled.high { background: var(--accent-green); }
+.moat-dot.filled.medium { background: var(--accent-amber); }
+.moat-dot.filled.low { background: var(--accent-pink); }
+
+/* ====== COMPARISON TABLE ====== */
+.table-section {
+  margin-top: 80px;
+  scroll-margin-top: 72px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+}
+
+table { width: 100%; border-collapse: collapse; min-width: 1100px; }
+
+thead th {
+  background: var(--bg-elevated);
+  padding: 14px 16px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-tertiary);
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+
+td {
+  padding: 14px 16px;
+  font-size: 0.84rem;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+  color: var(--text-secondary);
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(124,92,252,0.02); }
+
+td a { color: var(--accent-purple); font-weight: 600; transition: var(--transition-base); }
+td a:hover { color: #a78bfa; text-decoration: underline; }
+
+/* ====== INSIGHTS ====== */
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.insight-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.insight-card:hover { border-color: var(--border-default); transform: translateY(-2px); }
+
+.insight-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.insight-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.insight-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 48px 32px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+  .journey-flow { flex-direction: column; }
+  .journey-arrow { transform: rotate(90deg); justify-content: center; }
+  .card-top { padding: 20px; }
+  .tab-panels { padding: 20px; }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 60px 16px 40px; min-height: 80vh; }
+  .hero-metrics { grid-template-columns: 1fr 1fr; }
+  .container { padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      PM竞品分析报告 · 2026年3月更新
+    </div>
+    <h1>全球AI心理健康领域<br>TOP 10 竞品深度分析</h1>
+    <p class="hero-desc">从产品经理视角出发，覆盖用户旅程、定价策略、增长飞轮、护城河、PMF信号等12+维度，全景解构10家领先企业的产品策略与竞争格局</p>
+    <div class="hero-metrics">
+      <div class="hero-metric">
+        <div class="hero-metric-val purple">$50亿+</div>
+        <div class="hero-metric-label">累计融资</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric-val cyan">6条</div>
+        <div class="hero-metric-label">技术路线</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric-val pink">12+</div>
+        <div class="hero-metric-label">分析维度</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric-val amber">2亿+</div>
+        <div class="hero-metric-label">覆盖用户</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NAV ===== -->
+<nav class="sticky-nav">
+  <div class="nav-scroll">
+    <button class="nav-pill active" data-target="sec-overview">概览</button>
+    <button class="nav-pill" data-target="sec-1">1 Spring Health</button>
+    <button class="nav-pill" data-target="sec-2">2 Lyra Health</button>
+    <button class="nav-pill" data-target="sec-3">3 Talkspace</button>
+    <button class="nav-pill" data-target="sec-4">4 Wysa</button>
+    <button class="nav-pill" data-target="sec-5">5 Woebot</button>
+    <button class="nav-pill" data-target="sec-6">6 Eleos Health</button>
+    <button class="nav-pill" data-target="sec-7">7 Big Health</button>
+    <button class="nav-pill" data-target="sec-8">8 Kintsugi</button>
+    <button class="nav-pill" data-target="sec-9">9 Headspace</button>
+    <button class="nav-pill" data-target="sec-10">10 NeuroFlow</button>
+    <button class="nav-pill" data-target="sec-table">对比表</button>
+    <button class="nav-pill" data-target="sec-china">中国市场</button>
+    <button class="nav-pill" data-target="sec-insights">洞察</button>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<div class="container main-content" id="sec-overview">
+
+<!-- ============================================================ -->
+<!-- COMPANY 1: SPRING HEALTH -->
+<!-- ============================================================ -->
+<div class="company-section" id="sec-1">
+<div class="company-card">
+  <div class="card-top">
+    <div class="rank-num" style="background:linear-gradient(135deg,#7c5cfc,#a78bfa);">1</div>
+    <div class="company-title-area">
+      <h2>Spring Health</h2>
+      <div class="company-chips">
+        <span class="chip"><svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="3"/></svg> 纽约, 美国</span>
+        <span class="chip">成立 2016</span>
+        <span class="chip">融资 $5.98亿 · 估值 $33亿</span>
+        <span class="status-pill live"><span class="status-pill-dot"></span>运营中</span>
+      </div>
+    </div>
+    <a href="https://www.springhealth.com" target="_blank" class="link-btn">访问官网 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+  </div>
+  <div class="card-body">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="s1-core">核心分析</button>
+      <button class="tab-btn" data-tab="s1-journey">用户旅程</button>
+      <button class="tab-btn" data-tab="s1-pricing">定价与商业</button>
+      <button class="tab-btn" data-tab="s1-moat">护城河</button>
+      <button class="tab-btn" data-tab="s1-direction">迭代方向</button>
+    </div>
+    <div class="tab-panels">
+      <!-- Core -->
+      <div class="tab-panel active" id="s1-core">
+        <div class="grid-2">
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-cyan);">
+              <span class="icon" style="background:var(--accent-cyan-soft)">&#9733;</span> 核心优势
+            </div>
+            <p>拥有业界最大规模的行为健康数据集，通过AI精准匹配用户与治疗师和方案。"精准心理健康"概念开创者。覆盖超1000万会员，服务微软、Target等数百家大型企业。首次评估后即可推荐最佳治疗路径，平均3周显效。</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-pink);">
+              <span class="icon" style="background:var(--accent-pink-soft)">&#9881;</span> 技术难点
+            </div>
+            <p>构建高质量心理健康数据集的标注与隐私合规；AI推荐引擎需在多维治疗路径中做精确匹配；保证临床效果与用户留存的长期平衡；治疗师网络质量控制的规模化挑战。</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-amber);">
+              <span class="icon" style="background:var(--accent-amber-soft)">&#9741;</span> 关键产品
+            </div>
+            <p><strong>Spring Health Platform</strong> — 一站式企业心理健康福利平台（AI评估+治疗师匹配+数字自助+教练）<br><strong>Precision Mental Healthcare Engine</strong> — AI精准匹配引擎<br><strong>Spring Health for Families</strong> — 家庭心理服务扩展</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-green);">
+              <span class="icon" style="background:var(--accent-green-soft)">&#9878;</span> 目标用户
+            </div>
+            <p><strong>直接用户：</strong>企业员工及其家属（通过雇主福利获取服务）<br><strong>采购决策者：</strong>企业HR/福利负责人、CHRO<br><strong>人群特征：</strong>以白领、知识工作者为主，覆盖轻中度心理问题到严重精神障碍</p>
+          </div>
+        </div>
+        <!-- PM Scores -->
+        <div class="info-block grid-full" style="margin-top:16px;">
+          <div class="info-block-label" style="color:var(--accent-purple);">
+            <span class="icon" style="background:var(--accent-purple-soft)">&#9776;</span> 产品力评估
+          </div>
+          <div class="grid-2" style="gap:20px 40px;">
+            <div>
+              <div class="score-row"><span class="score-label">临床有效性</span><div class="score-track"><div class="score-fill" style="width:90%;background:var(--accent-green)"></div></div><span class="score-val" style="color:var(--accent-green)">9.0</span></div>
+              <div class="score-row"><span class="score-label">AI技术深度</span><div class="score-track"><div class="score-fill" style="width:88%;background:var(--accent-purple)"></div></div><span class="score-val" style="color:var(--accent-purple)">8.8</span></div>
+              <div class="score-row"><span class="score-label">用户体验</span><div class="score-track"><div class="score-fill" style="width:82%;background:var(--accent-cyan)"></div></div><span class="score-val" style="color:var(--accent-cyan)">8.2</span></div>
+            </div>
+            <div>
+              <div class="score-row"><span class="score-label">商业化成熟</span><div class="score-track"><div class="score-fill" style="width:92%;background:var(--accent-amber)"></div></div><span class="score-val" style="color:var(--accent-amber)">9.2</span></div>
+              <div class="score-row"><span class="score-label">增长潜力</span><div class="score-track"><div class="score-fill" style="width:90%;background:var(--accent-pink)"></div></div><span class="score-val" style="color:var(--accent-pink)">9.0</span></div>
+              <div class="score-row"><span class="score-label">合规能力</span><div class="score-track"><div class="score-fill" style="width:85%;background:var(--accent-blue)"></div></div><span class="score-val" style="color:var(--accent-blue)">8.5</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Journey -->
+      <div class="tab-panel" id="s1-journey">
+        <div class="info-block-label" style="color:var(--accent-cyan);margin-bottom:16px;">
+          <span class="icon" style="background:var(--accent-cyan-soft)">&#10132;</span> 用户旅程地图（AARRR模型）
+        </div>
+        <div class="journey-flow">
+          <div class="journey-step">
+            <div class="journey-step-num">STEP 1</div>
+            <div class="journey-step-title">获客 Acquisition</div>
+            <div class="journey-step-desc">企业HR采购→员工福利通知→入口嵌入企业内网/Slack/Teams</div>
+          </div>
+          <div class="journey-arrow">&#10132;</div>
+          <div class="journey-step">
+            <div class="journey-step-num">STEP 2</div>
+            <div class="journey-step-title">激活 Activation</div>
+            <div class="journey-step-desc">5分钟AI心理评估问卷→即时获得个性化治疗推荐→首次预约治疗师</div>
+          </div>
+          <div class="journey-arrow">&#10132;</div>
+          <div class="journey-step">
+            <div class="journey-step-num">STEP 3</div>
+            <div class="journey-step-title">留存 Retention</div>
+            <div class="journey-step-desc">治疗进度追踪→AI动态调整方案→数字自助工具日常使用→教练定期跟进</div>
+          </div>
+          <div class="journey-arrow">&#10132;</div>
+          <div class="journey-step">
+            <div class="journey-step-num">STEP 4</div>
+            <div class="journey-step-title">变现 Revenue</div>
+            <div class="journey-step-desc">企业按人头年费→疗效数据驱动续约→增购家庭成员服务</div>
+          </div>
+          <div class="journey-arrow">&#10132;</div>
+          <div class="journey-step">
+            <div class="journey-step-num">STEP 5</div>
+            <div class="journey-step-title">推荐 Referral</div>
+            <div class="journey-step-desc">ROI报告说服更多部门采购→员工口碑传播→行业案例背书</div>
+          </div>
+        </div>
+        <div class="info-block" style="margin-top:16px;">
+          <div class="info-block-label" style="color:var(--accent-green);">
+            <span class="icon" style="background:var(--accent-green-soft)">&#9989;</span> PMF信号
+          </div>
+          <p><strong>强PMF指标：</strong>覆盖1000万+会员；企业客户续约率极高；估值在2年内从$23亿增至$33亿；每轮融资均超额认购；服务的企业包括微软、Target、Gap等财富500强。</p>
+        </div>
+      </div>
+      <!-- Pricing -->
+      <div class="tab-panel" id="s1-pricing">
+        <div class="grid-2">
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-amber);">
+              <span class="icon" style="background:var(--accent-amber-soft)">&#36;</span> 定价策略
+            </div>
+            <p><strong>模式：</strong>B2B企业按员工人数年付（PEPM模型 — Per Employee Per Month）<br><strong>估算：</strong>$4-8 PEPM（根据企业规模和服务等级浮动）<br><strong>特点：</strong>含免费治疗次数（通常8次/年），超出由保险覆盖<br><strong>增值：</strong>家庭成员扩展、高管定制教练等增值包</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-green);">
+              <span class="icon" style="background:var(--accent-green-soft)">&#9730;</span> 增长飞轮
+            </div>
+            <p><strong>核心飞轮：</strong>更多用户数据 → AI匹配更精准 → 治疗见效更快 → 企业ROI报告更强 → 更多企业采购 → 更多用户数据<br><br><strong>关键杠杆：</strong>用疗效数据（如缺勤率下降、生产力提升的量化证据）说服企业采购决策者</p>
+          </div>
+          <div class="info-block grid-full">
+            <div class="info-block-label" style="color:var(--accent-purple);">
+              <span class="icon" style="background:var(--accent-purple-soft)">&#9734;</span> 付费方分析
+            </div>
+            <div class="pricing-highlight">
+              <div class="pricing-row"><span class="pricing-plan">企业雇主（核心）</span><span class="pricing-cost">~80% 收入</span></div>
+              <div class="pricing-row"><span class="pricing-plan">保险/健康计划</span><span class="pricing-cost">~15% 收入（增长中）</span></div>
+              <div class="pricing-row"><span class="pricing-plan">个人自费</span><span class="pricing-cost">~5% 收入</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Moat -->
+      <div class="tab-panel" id="s1-moat">
+        <div class="info-block">
+          <div class="info-block-label" style="color:var(--accent-purple);">
+            <span class="icon" style="background:var(--accent-purple-soft)">&#9876;</span> 护城河评估
+          </div>
+          <div class="moat-item">
+            <div class="moat-icon" style="background:var(--accent-purple-soft);color:var(--accent-purple);">&#128202;</div>
+            <div class="moat-text"><strong>数据壁垒</strong><span>1000万+会员的行为健康数据集，AI匹配精度随数据量增长</span></div>
+            <div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div></div>
+          </div>
+          <div class="moat-item">
+            <div class="moat-icon" style="background:var(--accent-cyan-soft);color:var(--accent-cyan);">&#128101;</div>
+            <div class="moat-text"><strong>网络效应</strong><span>治疗师网络越大→匹配越精准→用户体验越好→更多企业采购</span></div>
+            <div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot"></div></div>
+          </div>
+          <div class="moat-item">
+            <div class="moat-icon" style="background:var(--accent-amber-soft);color:var(--accent-amber);">&#128176;</div>
+            <div class="moat-text"><strong>转换成本</strong><span>企业切换心理健康福利供应商的决策成本和迁移成本极高</span></div>
+            <div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot"></div></div>
+          </div>
+          <div class="moat-item">
+            <div class="moat-icon" style="background:var(--accent-green-soft);color:var(--accent-green);">&#127942;</div>
+            <div class="moat-text"><strong>品牌认知</strong><span>"精准心理健康"概念的定义者，行业心智占领</span></div>
+            <div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot"></div><div class="moat-dot"></div></div>
+          </div>
+          <div class="moat-item">
+            <div class="moat-icon" style="background:var(--accent-pink-soft);color:var(--accent-pink);">&#128218;</div>
+            <div class="moat-text"><strong>监管/合规</strong><span>HIPAA全面合规，多州执照覆盖，但无FDA独占优势</span></div>
+            <div class="moat-strength"><div class="moat-dot filled medium"></div><div class="moat-dot filled medium"></div><div class="moat-dot filled medium"></div><div class="moat-dot"></div><div class="moat-dot"></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Direction -->
+      <div class="tab-panel" id="s1-direction">
+        <div class="grid-2">
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-cyan);">
+              <span class="icon" style="background:var(--accent-cyan-soft)">&#128640;</span> 短期迭代（6-12个月）
+            </div>
+            <p>深化AI精准匹配引擎，缩短从评估到缓解的时间；扩大保险渠道接入；增强移动端自助工具的个性化；推进IPO准备工作。</p>
+            <div class="tag-row">
+              <span class="mini-tag purple">AI匹配升级</span>
+              <span class="mini-tag amber">IPO准备</span>
+              <span class="mini-tag cyan">保险接入</span>
+            </div>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-pink);">
+              <span class="icon" style="background:var(--accent-pink-soft)">&#127919;</span> 中长期战略（1-3年）
+            </div>
+            <p>全球化扩张至欧洲和亚太市场；拓展至青少年和家庭心理服务；构建"心理健康操作系统"——整合所有心理健康服务的统一入口；探索AI治疗师辅助工具。</p>
+            <div class="tag-row">
+              <span class="mini-tag green">全球化</span>
+              <span class="mini-tag pink">家庭/青少年</span>
+              <span class="mini-tag blue">平台化</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-block" style="margin-top:16px;">
+          <div class="info-block-label" style="color:var(--accent-amber);">
+            <span class="icon" style="background:var(--accent-amber-soft)">&#9888;</span> 风险与挑战
+          </div>
+          <p>高度依赖企业客户导致收入集中风险；治疗师供给端的扩张速度可能跟不上需求增长；Lyra Health等强竞品在同赛道激烈竞争；经济下行时企业可能削减心理健康福利预算。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- COMPANY 2: LYRA HEALTH -->
+<!-- ============================================================ -->
+<div class="company-section" id="sec-2">
+<div class="company-card">
+  <div class="card-top">
+    <div class="rank-num" style="background:linear-gradient(135deg,#22d3ee,#67e8f9);">2</div>
+    <div class="company-title-area">
+      <h2>Lyra Health</h2>
+      <div class="company-chips">
+        <span class="chip">Burlingame, 加州</span>
+        <span class="chip">成立 2015</span>
+        <span class="chip">融资 $9.15亿 · 估值 $46亿</span>
+        <span class="status-pill live"><span class="status-pill-dot"></span>运营中</span>
+      </div>
+    </div>
+    <a href="https://www.lyrahealth.com" target="_blank" class="link-btn">访问官网 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+  </div>
+  <div class="card-body">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="s2-core">核心分析</button>
+      <button class="tab-btn" data-tab="s2-journey">用户旅程</button>
+      <button class="tab-btn" data-tab="s2-pricing">定价与商业</button>
+      <button class="tab-btn" data-tab="s2-moat">护城河</button>
+      <button class="tab-btn" data-tab="s2-direction">迭代方向</button>
+    </div>
+    <div class="tab-panels">
+      <div class="tab-panel active" id="s2-core">
+        <div class="grid-2">
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#9733;</span> 核心优势</div>
+            <p>融资最多的企业心理健康平台（$9.15亿），构建了业界最大的循证治疗师网络之一。与斯坦福大学紧密合作，强调基于循证的治疗。覆盖1500万+会员，500+企业客户（eBay、Zoom、Morgan Stanley等）。治疗师严格筛选，淘汰率极高。</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#9881;</span> 技术难点</div>
+            <p>大规模临床网络的质量一致性控制；AI疗效监测需在保护隐私的同时追踪长期结果；跨文化和语言环境下维持治疗标准化；治疗师供给侧扩张的速度与质量平衡。</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9741;</span> 关键产品</div>
+            <p><strong>Lyra Care</strong> — 综合心理健康平台（治疗+教练+自助工具）<br><strong>AI Provider Matching</strong> — 智能治疗师匹配系统<br><strong>Lyra Learn</strong> — 数字化心理健康教育预防模块<br><strong>Lyra for Teens</strong> — 青少年心理服务</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9878;</span> 目标用户</div>
+            <p><strong>直接用户：</strong>企业员工及家属<br><strong>决策者：</strong>HR/Benefits Leader<br><strong>差异化：</strong>更强调治疗师质量筛选，面向重视"临床质量而非规模"的企业客户</p>
+          </div>
+        </div>
+        <div class="info-block grid-full" style="margin-top:16px;">
+          <div class="info-block-label" style="color:var(--accent-purple);"><span class="icon" style="background:var(--accent-purple-soft)">&#9776;</span> 产品力评估</div>
+          <div class="grid-2" style="gap:20px 40px;">
+            <div>
+              <div class="score-row"><span class="score-label">临床有效性</span><div class="score-track"><div class="score-fill" style="width:95%;background:var(--accent-green)"></div></div><span class="score-val" style="color:var(--accent-green)">9.5</span></div>
+              <div class="score-row"><span class="score-label">AI技术深度</span><div class="score-track"><div class="score-fill" style="width:82%;background:var(--accent-purple)"></div></div><span class="score-val" style="color:var(--accent-purple)">8.2</span></div>
+              <div class="score-row"><span class="score-label">用户体验</span><div class="score-track"><div class="score-fill" style="width:80%;background:var(--accent-cyan)"></div></div><span class="score-val" style="color:var(--accent-cyan)">8.0</span></div>
+            </div>
+            <div>
+              <div class="score-row"><span class="score-label">商业化成熟</span><div class="score-track"><div class="score-fill" style="width:90%;background:var(--accent-amber)"></div></div><span class="score-val" style="color:var(--accent-amber)">9.0</span></div>
+              <div class="score-row"><span class="score-label">增长潜力</span><div class="score-track"><div class="score-fill" style="width:85%;background:var(--accent-pink)"></div></div><span class="score-val" style="color:var(--accent-pink)">8.5</span></div>
+              <div class="score-row"><span class="score-label">合规能力</span><div class="score-track"><div class="score-fill" style="width:90%;background:var(--accent-blue)"></div></div><span class="score-val" style="color:var(--accent-blue)">9.0</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s2-journey">
+        <div class="journey-flow">
+          <div class="journey-step"><div class="journey-step-num">STEP 1</div><div class="journey-step-title">获客</div><div class="journey-step-desc">企业采购→集成到现有福利平台→员工邮件/HR宣导</div></div>
+          <div class="journey-arrow">&#10132;</div>
+          <div class="journey-step"><div class="journey-step-num">STEP 2</div><div class="journey-step-title">激活</div><div class="journey-step-desc">在线评估→AI推荐循证治疗师→24h内可预约首次会话</div></div>
+          <div class="journey-arrow">&#10132;</div>
+          <div class="journey-step"><div class="journey-step-num">STEP 3</div><div class="journey-step-title">留存</div><div class="journey-step-desc">循证结构化疗程→进度里程碑追踪→Lyra Learn预防教育→教练辅助</div></div>
+          <div class="journey-arrow">&#10132;</div>
+          <div class="journey-step"><div class="journey-step-num">STEP 4</div><div class="journey-step-title">变现</div><div class="journey-step-desc">PEPM企业年费→疗效报告驱动扩大覆盖→增购青少年/家庭服务</div></div>
+          <div class="journey-arrow">&#10132;</div>
+          <div class="journey-step"><div class="journey-step-num">STEP 5</div><div class="journey-step-title">推荐</div><div class="journey-step-desc">临床结果数据白皮书→行业会议案例→CHRO社群口碑</div></div>
+        </div>
+        <div class="info-block" style="margin-top:16px;">
+          <div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9989;</span> PMF信号</div>
+          <p>行业最高融资额（$9.15亿）；$46亿估值领跑赛道；治疗师筛选通过率仅约2%形成临床品牌差异化；500+企业客户且续约率极高。</p>
+        </div>
+      </div>
+      <div class="tab-panel" id="s2-pricing">
+        <div class="grid-2">
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#36;</span> 定价策略</div>
+            <p><strong>模式：</strong>PEPM企业年费（Per Employee Per Month）<br><strong>估算：</strong>$5-10 PEPM（高端定位，强调临床质量溢价）<br><strong>含：</strong>一定次数免费治疗会话+教练+自助工具<br><strong>vs Spring Health：</strong>定价略高，以"治疗师质量"为定价锚点</p>
+          </div>
+          <div class="info-block">
+            <div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9730;</span> 增长飞轮</div>
+            <p><strong>核心飞轮：</strong>严格筛选治疗师 → 临床效果优异 → 疗效数据背书 → 高端企业客户信任 → 更多融资 → 扩大治疗师网络<br><br><strong>差异点：</strong>以"质量"而非"数量"驱动飞轮，走高端路线</p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s2-moat">
+        <div class="info-block">
+          <div class="info-block-label" style="color:var(--accent-purple);"><span class="icon" style="background:var(--accent-purple-soft)">&#9876;</span> 护城河评估</div>
+          <div class="moat-item"><div class="moat-icon" style="background:var(--accent-green-soft);color:var(--accent-green);">&#128138;</div><div class="moat-text"><strong>临床质量壁垒</strong><span>2%的治疗师通过率、循证方法标准化，竞品极难复制</span></div><div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div></div></div>
+          <div class="moat-item"><div class="moat-icon" style="background:var(--accent-purple-soft);color:var(--accent-purple);">&#128202;</div><div class="moat-text"><strong>数据壁垒</strong><span>1500万+会员治疗数据积累</span></div><div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot"></div></div></div>
+          <div class="moat-item"><div class="moat-icon" style="background:var(--accent-amber-soft);color:var(--accent-amber);">&#128176;</div><div class="moat-text"><strong>资本壁垒</strong><span>$9.15亿融资构建了巨大的资金护城河</span></div><div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div></div></div>
+          <div class="moat-item"><div class="moat-icon" style="background:var(--accent-cyan-soft);color:var(--accent-cyan);">&#128101;</div><div class="moat-text"><strong>企业关系</strong><span>大型企业长期合同，切换成本高</span></div><div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot"></div></div></div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s2-direction">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#128640;</span> 短期迭代</div><p>深化AI实时治疗辅助能力；拓展家庭和青少年服务线；增强数字疗法的个性化和临床有效性；加速国际化。</p><div class="tag-row"><span class="mini-tag cyan">AI治疗辅助</span><span class="mini-tag pink">青少年</span><span class="mini-tag green">国际化</span></div></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9888;</span> 风险</div><p>与Spring Health的正面竞争日趋激烈；高端定位可能限制下沉市场空间；治疗师供给端扩张瓶颈；经济衰退期企业福利削减风险。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- COMPANY 3: TALKSPACE -->
+<!-- ============================================================ -->
+<div class="company-section" id="sec-3">
+<div class="company-card">
+  <div class="card-top">
+    <div class="rank-num" style="background:linear-gradient(135deg,#f472b6,#fb7185);">3</div>
+    <div class="company-title-area">
+      <h2>Talkspace</h2>
+      <div class="company-chips">
+        <span class="chip">纽约, 美国</span>
+        <span class="chip">成立 2012</span>
+        <span class="chip">NASDAQ: TALK · 2025营收 $2.29亿</span>
+        <span class="status-pill ipo"><span class="status-pill-dot"></span>已上市</span>
+      </div>
+    </div>
+    <a href="https://www.talkspace.com" target="_blank" class="link-btn">访问官网 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+  </div>
+  <div class="card-body">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="s3-core">核心分析</button>
+      <button class="tab-btn" data-tab="s3-pricing">定价与商业</button>
+      <button class="tab-btn" data-tab="s3-moat">护城河</button>
+      <button class="tab-btn" data-tab="s3-direction">迭代方向</button>
+    </div>
+    <div class="tab-panels">
+      <div class="tab-panel active" id="s3-core">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#9733;</span> 核心优势</div><p>在线心理治疗最早的先驱之一，品牌认知度高。文本/语音/视频多模式治疗。2025年营收同比增长22%达$2.29亿，已实现EBITDA盈利。接受多家主流保险，降低用户支付门槛。唯一的上市纯线上心理治疗平台。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#9881;</span> 技术难点</div><p>异步文本治疗模式下的临床质量保证；AI辅助不替代人类治疗师的分寸感；beta测试的AI治疗聊天机器人面临监管和安全性审查；保险接入的运营复杂度高。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9741;</span> 关键产品</div><p><strong>Talkspace Therapy</strong> — 在线治疗（文字/语音/视频）<br><strong>Talkspace Psychiatry</strong> — 在线精神科药物管理<br><strong>AI Chatbot（Beta）</strong> — AI治疗辅助聊天机器人<br><strong>Talkspace for Business</strong> — 企业EAP方案</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9878;</span> 目标用户</div><p><strong>C端用户：</strong>25-45岁城市人群，偏好便捷远程治疗<br><strong>B端：</strong>企业EAP、保险公司<br><strong>关键画像：</strong>有保险但看不上传统线下的年轻职场人</p></div>
+        </div>
+        <div class="info-block grid-full" style="margin-top:16px;">
+          <div class="info-block-label" style="color:var(--accent-purple);"><span class="icon" style="background:var(--accent-purple-soft)">&#9776;</span> 产品力评估</div>
+          <div class="grid-2" style="gap:20px 40px;">
+            <div>
+              <div class="score-row"><span class="score-label">临床有效性</span><div class="score-track"><div class="score-fill" style="width:75%;background:var(--accent-green)"></div></div><span class="score-val" style="color:var(--accent-green)">7.5</span></div>
+              <div class="score-row"><span class="score-label">AI技术深度</span><div class="score-track"><div class="score-fill" style="width:65%;background:var(--accent-purple)"></div></div><span class="score-val" style="color:var(--accent-purple)">6.5</span></div>
+              <div class="score-row"><span class="score-label">用户体验</span><div class="score-track"><div class="score-fill" style="width:80%;background:var(--accent-cyan)"></div></div><span class="score-val" style="color:var(--accent-cyan)">8.0</span></div>
+            </div>
+            <div>
+              <div class="score-row"><span class="score-label">商业化成熟</span><div class="score-track"><div class="score-fill" style="width:88%;background:var(--accent-amber)"></div></div><span class="score-val" style="color:var(--accent-amber)">8.8</span></div>
+              <div class="score-row"><span class="score-label">增长潜力</span><div class="score-track"><div class="score-fill" style="width:78%;background:var(--accent-pink)"></div></div><span class="score-val" style="color:var(--accent-pink)">7.8</span></div>
+              <div class="score-row"><span class="score-label">合规能力</span><div class="score-track"><div class="score-fill" style="width:85%;background:var(--accent-blue)"></div></div><span class="score-val" style="color:var(--accent-blue)">8.5</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s3-pricing">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#36;</span> 定价策略（DTC）</div>
+            <div class="pricing-highlight">
+              <div class="pricing-row"><span class="pricing-plan">Messaging Therapy</span><span class="pricing-cost">$69/周</span></div>
+              <div class="pricing-row"><span class="pricing-plan">Video + Messaging</span><span class="pricing-cost">$99/周</span></div>
+              <div class="pricing-row"><span class="pricing-plan">Psychiatry (首次)</span><span class="pricing-cost">$299</span></div>
+              <div class="pricing-row"><span class="pricing-plan">Psychiatry (复诊)</span><span class="pricing-cost">$199</span></div>
+              <div class="pricing-row"><span class="pricing-plan">保险覆盖后自付</span><span class="pricing-cost">$0-30 copay</span></div>
+            </div>
+          </div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9730;</span> 增长飞轮</div><p><strong>核心飞轮：</strong>保险覆盖扩大 → 用户支付门槛降低 → 更多用户 → 更多治疗数据 → 更好的治疗师匹配 → 更高留存 → 对保险公司价值更大 → 更多保险接入<br><br><strong>2026年营收预期：</strong>$2.75-2.9亿（同比增长20-27%）</p></div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s3-moat">
+        <div class="info-block">
+          <div class="info-block-label" style="color:var(--accent-purple);"><span class="icon" style="background:var(--accent-purple-soft)">&#9876;</span> 护城河评估</div>
+          <div class="moat-item"><div class="moat-icon" style="background:var(--accent-amber-soft);color:var(--accent-amber);">&#127942;</div><div class="moat-text"><strong>品牌先发优势</strong><span>在线治疗品类的定义者，高品牌认知度</span></div><div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot"></div></div></div>
+          <div class="moat-item"><div class="moat-icon" style="background:var(--accent-green-soft);color:var(--accent-green);">&#128179;</div><div class="moat-text"><strong>保险网络</strong><span>已接入多家大型保险商，新进入者很难快速复制</span></div><div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot"></div></div></div>
+          <div class="moat-item"><div class="moat-icon" style="background:var(--accent-cyan-soft);color:var(--accent-cyan);">&#128200;</div><div class="moat-text"><strong>上市公司信誉</strong><span>唯一上市的纯在线心理治疗公司，增强企业客户信任</span></div><div class="moat-strength"><div class="moat-dot filled medium"></div><div class="moat-dot filled medium"></div><div class="moat-dot filled medium"></div><div class="moat-dot"></div><div class="moat-dot"></div></div></div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s3-direction">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#128640;</span> 迭代方向</div><p>全力推进AI治疗聊天机器人正式上线；深化保险渠道降低获客成本；向青少年/退伍军人等细分人群拓展；提升平台个性化推荐。</p><div class="tag-row"><span class="mini-tag purple">AI Chatbot</span><span class="mini-tag green">保险深化</span><span class="mini-tag pink">细分市场</span></div></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9888;</span> 风险</div><p>AI Chatbot的合规与安全风险；BetterHelp（Teladoc子公司）的强竞争；治疗质量的口碑争议；上市公司盈利压力下的长期创新投入。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- COMPANY 4-10: Compact cards with same tab system -->
+<!-- ============================================================ -->
+
+<!-- #4 Wysa -->
+<div class="company-section" id="sec-4">
+<div class="company-card">
+  <div class="card-top">
+    <div class="rank-num" style="background:linear-gradient(135deg,#34d399,#6ee7b7);">4</div>
+    <div class="company-title-area">
+      <h2>Wysa</h2>
+      <div class="company-chips">
+        <span class="chip">波士顿 / 班加罗尔</span><span class="chip">成立 2016</span><span class="chip">融资 ~$3600万</span>
+        <span class="status-pill live"><span class="status-pill-dot"></span>运营中</span>
+      </div>
+    </div>
+    <a href="https://www.wysa.com" target="_blank" class="link-btn">访问官网 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+  </div>
+  <div class="card-body">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="s4-core">核心分析</button>
+      <button class="tab-btn" data-tab="s4-pricing">定价与商业</button>
+      <button class="tab-btn" data-tab="s4-moat">护城河</button>
+    </div>
+    <div class="tab-panels">
+      <div class="tab-panel active" id="s4-core">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#9733;</span> 核心优势</div><p>全球临床验证最充分的AI心理聊天机器人（30+篇同行评审论文）。FDA突破性设备认证。500万+用户，覆盖95+国家。2025年收购April Health，升级为"phygital"（数字+线下）混合模式。强生创新战略投资，NHS试点采用。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#9881;</span> 技术难点</div><p>AI对话在自杀风险评估中的安全边界控制；多语言/低资源语言下CBT/DBT的准确性；AI自助与人类治疗师介入的时机判断；通用LLM颠覆风险下的技术路线选择。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9741;</span> 关键产品</div><p><strong>Wysa App</strong> — AI对话式情绪支持（CBT/DBT/正念）<br><strong>Wysa for Employers</strong> — 企业版EAP方案<br><strong>Wysa Clinical</strong> — 面向医疗机构的临床辅助<br><strong>Wysa + April Health</strong> — AI聊天+真人治疗师一体化</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9878;</span> 产品力评估</div>
+            <div class="score-row"><span class="score-label">临床有效性</span><div class="score-track"><div class="score-fill" style="width:88%;background:var(--accent-green)"></div></div><span class="score-val" style="color:var(--accent-green)">8.8</span></div>
+            <div class="score-row"><span class="score-label">AI技术深度</span><div class="score-track"><div class="score-fill" style="width:85%;background:var(--accent-purple)"></div></div><span class="score-val" style="color:var(--accent-purple)">8.5</span></div>
+            <div class="score-row"><span class="score-label">用户体验</span><div class="score-track"><div class="score-fill" style="width:86%;background:var(--accent-cyan)"></div></div><span class="score-val" style="color:var(--accent-cyan)">8.6</span></div>
+            <div class="score-row"><span class="score-label">商业化成熟</span><div class="score-track"><div class="score-fill" style="width:65%;background:var(--accent-amber)"></div></div><span class="score-val" style="color:var(--accent-amber)">6.5</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s4-pricing">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#36;</span> 定价策略</div>
+            <div class="pricing-highlight">
+              <div class="pricing-row"><span class="pricing-plan">Free Tier（AI聊天基础版）</span><span class="pricing-cost">$0</span></div>
+              <div class="pricing-row"><span class="pricing-plan">Premium Self-Care</span><span class="pricing-cost">$74.99/年</span></div>
+              <div class="pricing-row"><span class="pricing-plan">With Coaching</span><span class="pricing-cost">~$299/月</span></div>
+              <div class="pricing-row"><span class="pricing-plan">企业版 (PEPM)</span><span class="pricing-cost">定制报价</span></div>
+            </div>
+          </div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9730;</span> 增长飞轮</div><p><strong>飞轮：</strong>临床论文验证 → 获得FDA/NHS认可 → B端客户信任 → 更多用户数据 → AI能力提升 → 更多临床验证<br><br><strong>杠杆：</strong>以科研临床验证为核心增长引擎，走"学术-监管-商业化"的稳健路线</p></div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s4-moat">
+        <div class="info-block">
+          <div class="moat-item"><div class="moat-icon" style="background:var(--accent-green-soft);color:var(--accent-green);">&#128218;</div><div class="moat-text"><strong>临床验证壁垒</strong><span>30+篇论文，FDA突破性认证，行业最强临床证据</span></div><div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div></div></div>
+          <div class="moat-item"><div class="moat-icon" style="background:var(--accent-cyan-soft);color:var(--accent-cyan);">&#127758;</div><div class="moat-text"><strong>全球化先发</strong><span>95+国家覆盖，英国NHS试点，发展中国家phygital模式</span></div><div class="moat-strength"><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot filled high"></div><div class="moat-dot"></div></div></div>
+          <div class="moat-item"><div class="moat-icon" style="background:var(--accent-amber-soft);color:var(--accent-amber);">&#128176;</div><div class="moat-text"><strong>资本效率</strong><span>以较少融资实现较大覆盖，但资金壁垒相对较弱</span></div><div class="moat-strength"><div class="moat-dot filled medium"></div><div class="moat-dot filled medium"></div><div class="moat-dot"></div><div class="moat-dot"></div><div class="moat-dot"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- #5 Woebot -->
+<div class="company-section" id="sec-5">
+<div class="company-card">
+  <div class="card-top">
+    <div class="rank-num" style="background:linear-gradient(135deg,#f472b6,#e11d48);">5</div>
+    <div class="company-title-area">
+      <h2>Woebot Health</h2>
+      <div class="company-chips">
+        <span class="chip">旧金山</span><span class="chip">成立 2017</span><span class="chip">融资 ~$1.23亿</span>
+        <span class="status-pill dead"><span class="status-pill-dot"></span>核心产品已关停 2025.7</span>
+      </div>
+    </div>
+    <a href="https://woebothealth.com" target="_blank" class="link-btn">访问官网 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+  </div>
+  <div class="card-body">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="s5-core">核心分析</button>
+      <button class="tab-btn" data-tab="s5-lesson">失败复盘</button>
+    </div>
+    <div class="tab-panels">
+      <div class="tab-panel active" id="s5-core">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#9733;</span> 历史贡献</div><p>AI心理治疗聊天机器人的先驱，斯坦福心理学教授Alison Darcy创立。基于严格CBT循证方法，是最早追求FDA SaMD认证的公司。全球300万+用户，多项临床试验证实效果。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#9881;</span> 关停原因</div><p>FDA监管路径耗时长且成本极高；通用LLM的快速发展使规则化对话系统"过时"；创始人指出"AI技术进步远超监管审批速度"；形成致命的战略夹缝。2025年7月正式关闭App。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9741;</span> 产品</div><p><strong>Woebot App（已关停）</strong> — 基于规则树和NLP的CBT对话机器人<br><strong>Woebot for Business（前期）</strong> — 企业版方案<br>公司表示正探索新的AI技术方向</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9878;</span> 产品力（历史峰值）</div>
+            <div class="score-row"><span class="score-label">临床有效性</span><div class="score-track"><div class="score-fill" style="width:80%;background:var(--accent-green)"></div></div><span class="score-val" style="color:var(--accent-green)">8.0</span></div>
+            <div class="score-row"><span class="score-label">AI技术深度</span><div class="score-track"><div class="score-fill" style="width:55%;background:var(--accent-pink)"></div></div><span class="score-val" style="color:var(--accent-pink)">5.5</span></div>
+            <div class="score-row"><span class="score-label">商业化成熟</span><div class="score-track"><div class="score-fill" style="width:35%;background:var(--accent-amber)"></div></div><span class="score-val" style="color:var(--accent-amber)">3.5</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s5-lesson">
+        <div class="info-block" style="border-color:rgba(244,114,182,0.2);background:linear-gradient(135deg,rgba(244,114,182,0.04),rgba(124,92,252,0.02));">
+          <div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#128161;</span> PM必看：Woebot失败复盘</div>
+          <p style="margin-bottom:16px;"><strong>1. 监管策略错误：</strong>将FDA认证作为核心护城河，但认证周期（3-5年）远超技术迭代速度。结果是：还没拿到认证，技术路线已被淘汰。</p>
+          <p style="margin-bottom:16px;"><strong>2. 技术路线刚性：</strong>坚持"规则树+安全NLP"而非拥抱LLM。虽然出于安全考虑可以理解，但导致产品体验远落后于通用AI聊天工具。用户用过ChatGPT后就不会满足于Woebot的对话质量。</p>
+          <p style="margin-bottom:16px;"><strong>3. 商业化节奏失误：</strong>过于追求"产品完美+监管合规"再商业化，错过了快速占领市场的窗口期。Wysa选择了"先跑量，同步做认证"的策略，对比之下高下立判。</p>
+          <p><strong>4. 对PM的启示：</strong>在快速变化的AI赛道，"等监管批准后再大规模商业化"的策略可能是致命的。需要找到"合规+速度"的平衡点。护城河不应建立在监管壁垒上，而应建立在数据和用户关系上。</p>
+          <div class="tag-row"><span class="mini-tag pink">监管策略失误</span><span class="mini-tag amber">技术路线僵化</span><span class="mini-tag purple">LLM颠覆</span><span class="mini-tag cyan">商业化过慢</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- #6 Eleos Health -->
+<div class="company-section" id="sec-6">
+<div class="company-card">
+  <div class="card-top">
+    <div class="rank-num" style="background:linear-gradient(135deg,#60a5fa,#3b82f6);">6</div>
+    <div class="company-title-area">
+      <h2>Eleos Health</h2>
+      <div class="company-chips">
+        <span class="chip">波士顿 / 特拉维夫</span><span class="chip">成立 2020</span><span class="chip">融资 ~$1.13亿</span>
+        <span class="status-pill hot"><span class="status-pill-dot"></span>高速增长</span>
+      </div>
+    </div>
+    <a href="https://eleos.health" target="_blank" class="link-btn">访问官网 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+  </div>
+  <div class="card-body">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="s6-core">核心分析</button>
+      <button class="tab-btn" data-tab="s6-pricing">定价与商业</button>
+    </div>
+    <div class="tab-panels">
+      <div class="tab-panel active" id="s6-core">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#9733;</span> 核心优势</div><p>差异化定位"临床端"——为治疗师提供AI Copilot，而非直接面向患者。多模态LLM自动生成临床笔记、治疗计划和合规文档。服务35,000+临床医生，是行为健康CareOps自动化的领导者。成立仅4年已完成C轮$6000万融资，增速惊人。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#9881;</span> 技术难点</div><p>心理治疗对话中AI的准确性和隐私保护；AI生成文档需达保险报销和法律合规标准；跨治疗流派（CBT/DBT/MI等）的专业准确性；Agentic AI在临床场景的可靠性。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9741;</span> 关键产品</div><p><strong>Eleos AI Copilot</strong> — 实时会话记录、笔记生成、洞察提取<br><strong>CareOps Automation</strong> — 自动化治疗计划/合规文档/质量评估<br><strong>Agentic AI Framework</strong> — 自主执行复杂临床工作流的AI Agent</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9878;</span> 产品力评估</div>
+            <div class="score-row"><span class="score-label">AI技术深度</span><div class="score-track"><div class="score-fill" style="width:93%;background:var(--accent-purple)"></div></div><span class="score-val" style="color:var(--accent-purple)">9.3</span></div>
+            <div class="score-row"><span class="score-label">商业化成熟</span><div class="score-track"><div class="score-fill" style="width:72%;background:var(--accent-amber)"></div></div><span class="score-val" style="color:var(--accent-amber)">7.2</span></div>
+            <div class="score-row"><span class="score-label">增长潜力</span><div class="score-track"><div class="score-fill" style="width:95%;background:var(--accent-green)"></div></div><span class="score-val" style="color:var(--accent-green)">9.5</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s6-pricing">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#36;</span> 定价 & 付费方</div><p><strong>模式：</strong>B2B SaaS，按治疗师席位或使用量计费<br><strong>客户：</strong>行为健康机构、SUD治疗中心、居家护理组织<br><strong>核心价值主张：</strong>减少治疗师50%+的文档时间，降低burnout，提高合规率</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9730;</span> 增长飞轮</div><p><strong>飞轮：</strong>更多治疗师使用 → 更多临床对话数据 → AI模型更精准 → 文档质量更高 → 更多机构采购 → 更多治疗师使用<br><br><strong>核心杠杆：</strong>"治疗师burnout"是行业痛点，Eleos解决的是供给侧问题</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- #7 Big Health -->
+<div class="company-section" id="sec-7">
+<div class="company-card">
+  <div class="card-top">
+    <div class="rank-num" style="background:linear-gradient(135deg,#fbbf24,#f59e0b);">7</div>
+    <div class="company-title-area">
+      <h2>Big Health</h2>
+      <div class="company-chips">
+        <span class="chip">旧金山</span><span class="chip">成立 2010</span><span class="chip">融资 ~$1.59亿</span>
+        <span class="status-pill live"><span class="status-pill-dot"></span>运营中</span>
+      </div>
+    </div>
+    <a href="https://www.bighealth.com" target="_blank" class="link-btn">访问官网 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+  </div>
+  <div class="card-body">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="s7-core">核心分析</button>
+      <button class="tab-btn" data-tab="s7-pricing">定价与商业</button>
+    </div>
+    <div class="tab-panels">
+      <div class="tab-panel active" id="s7-core">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#9733;</span> 核心优势</div><p>数字疗法（DTx）标杆企业，SleepioRx和DaylightRx均获FDA许可。处方级数字疗法意味着可被保险报销，商业化路径最清晰。2026年初再获$2370万融资验证DTx模式。临床试验数据充分证实失眠和焦虑的疗效。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#9881;</span> 技术难点</div><p>维持FDA认证的持续合规成本；数字疗法用户完成率（adherence）是行业难题；需持续产出临床证据维持保险覆盖；DTx赛道整体信心经历2023-2024低谷期。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9741;</span> 关键产品</div><p><strong>SleepioRx（FDA许可）</strong> — CBT-I数字化失眠治疗处方<br><strong>DaylightRx（FDA许可）</strong> — CBT数字化焦虑治疗处方<br>两款产品均可由医生"开处方"，患者通过App完成疗程</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9878;</span> 产品力评估</div>
+            <div class="score-row"><span class="score-label">临床有效性</span><div class="score-track"><div class="score-fill" style="width:92%;background:var(--accent-green)"></div></div><span class="score-val" style="color:var(--accent-green)">9.2</span></div>
+            <div class="score-row"><span class="score-label">合规能力</span><div class="score-track"><div class="score-fill" style="width:96%;background:var(--accent-blue)"></div></div><span class="score-val" style="color:var(--accent-blue)">9.6</span></div>
+            <div class="score-row"><span class="score-label">商业化成熟</span><div class="score-track"><div class="score-fill" style="width:72%;background:var(--accent-amber)"></div></div><span class="score-val" style="color:var(--accent-amber)">7.2</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s7-pricing">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#36;</span> 付费方</div><p><strong>核心：</strong>健康计划/保险公司承保（处方级产品可报销）<br><strong>补充：</strong>企业雇主福利采购<br><strong>独特优势：</strong>FDA认证使其获得保险报销通道，这是大多数AI心理工具不具备的</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9730;</span> 迭代方向</div><p>拓展新适应症（PTSD、抑郁等）；深化与大型健康计划合作；用AI提升治疗个性化和用户粘性；构建"数字药房"——一站式处方级心理DTx平台。</p><div class="tag-row"><span class="mini-tag green">FDA认证</span><span class="mini-tag amber">处方级DTx</span><span class="mini-tag purple">新适应症</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- #8 Kintsugi -->
+<div class="company-section" id="sec-8">
+<div class="company-card">
+  <div class="card-top">
+    <div class="rank-num" style="background:linear-gradient(135deg,#a78bfa,#7c3aed);">8</div>
+    <div class="company-title-area">
+      <h2>Kintsugi</h2>
+      <div class="company-chips">
+        <span class="chip">伯克利, 加州</span><span class="chip">成立 2019</span><span class="chip">融资 ~$2800万</span>
+        <span class="status-pill live"><span class="status-pill-dot"></span>运营中</span>
+      </div>
+    </div>
+    <a href="https://www.kintsugihealth.com" target="_blank" class="link-btn">访问官网 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+  </div>
+  <div class="card-body">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="s8-core">核心分析</button>
+      <button class="tab-btn" data-tab="s8-pricing">定价与商业</button>
+    </div>
+    <div class="tab-panels">
+      <div class="tab-panel active" id="s8-core">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#9733;</span> 核心优势</div><p>语音生物标记（Voice Biomarker）技术在心理健康筛查领域的开创者。仅需20秒语音即可检测抑郁和焦虑早期信号。API-First架构，可嵌入任何系统实现规模化被动筛查。Insight Partners领投A轮$2000万。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#9881;</span> 技术难点</div><p>跨文化/跨语言/跨口音的泛化能力是核心挑战；需持续扩大训练数据集覆盖不同人群；从筛查到诊断的监管路径仍在探索；避免假阳性导致的过度医疗化。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9741;</span> 关键产品</div><p><strong>Kintsugi Voice API</strong> — 语音生物标记检测API<br><strong>Kintsugi Enterprise</strong> — 企业/医疗机构心理健康风险筛查方案<br>技术路线完全不同于对话式AI或治疗平台</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9878;</span> 产品力评估</div>
+            <div class="score-row"><span class="score-label">技术创新性</span><div class="score-track"><div class="score-fill" style="width:96%;background:var(--accent-purple)"></div></div><span class="score-val" style="color:var(--accent-purple)">9.6</span></div>
+            <div class="score-row"><span class="score-label">商业化成熟</span><div class="score-track"><div class="score-fill" style="width:48%;background:var(--accent-amber)"></div></div><span class="score-val" style="color:var(--accent-amber)">4.8</span></div>
+            <div class="score-row"><span class="score-label">增长潜力</span><div class="score-track"><div class="score-fill" style="width:90%;background:var(--accent-green)"></div></div><span class="score-val" style="color:var(--accent-green)">9.0</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s8-pricing">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#36;</span> 商业模式</div><p><strong>模式：</strong>B2B/B2B2C，API调用量或组织许可计费<br><strong>客户：</strong>医疗机构、保险公司、远程医疗平台、企业雇主<br><strong>独特：</strong>作为"检测层"嵌入其他平台，而非独立面向终端用户</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9730;</span> 迭代方向</div><p>扩展检测维度（PTSD、双相障碍等）；推进FDA认证进入临床诊断场景；与远程医疗平台深度集成；探索连续监测（而非一次性筛查）产品形态。</p><div class="tag-row"><span class="mini-tag purple">语音生物标记</span><span class="mini-tag cyan">API-First</span><span class="mini-tag green">被动筛查</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- #9 Headspace -->
+<div class="company-section" id="sec-9">
+<div class="company-card">
+  <div class="card-top">
+    <div class="rank-num" style="background:linear-gradient(135deg,#fbbf24,#fb923c);">9</div>
+    <div class="company-title-area">
+      <h2>Headspace</h2>
+      <div class="company-chips">
+        <span class="chip">圣莫尼卡, 加州</span><span class="chip">2010创立 / 2021合并Ginger</span><span class="chip">融资 $4亿+ · 估值 ~$30亿</span>
+        <span class="status-pill live"><span class="status-pill-dot"></span>运营中</span>
+      </div>
+    </div>
+    <a href="https://www.headspace.com" target="_blank" class="link-btn">访问官网 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+  </div>
+  <div class="card-body">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="s9-core">核心分析</button>
+      <button class="tab-btn" data-tab="s9-pricing">定价与商业</button>
+    </div>
+    <div class="tab-panels">
+      <div class="tab-panel active" id="s9-core">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#9733;</span> 核心优势</div><p>全球最知名心理健康品牌，1亿+下载量。2021年与AI平台Ginger合并，形成"正念内容 + AI临床服务"独特组合。覆盖B2C和B2B双赛道，企业端4500+组织。品牌力和用户基数是最大资产。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#9881;</span> 技术难点</div><p>Ginger AI临床能力与Headspace正念内容的深度整合；AI行为健康教练的临床有效性验证；海量用户规模下维持个性化推荐质量；正念App到临床服务平台的转型挑战。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9741;</span> 关键产品</div><p><strong>Headspace App</strong> — 冥想、正念和睡眠内容（$12.99/月 或 $69.99/年）<br><strong>Headspace Care（原Ginger）</strong> — AI教练+治疗师+精神科医生<br><strong>Headspace for Work</strong> — 企业心理健康整合方案</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9878;</span> 产品力评估</div>
+            <div class="score-row"><span class="score-label">品牌力</span><div class="score-track"><div class="score-fill" style="width:98%;background:var(--accent-amber)"></div></div><span class="score-val" style="color:var(--accent-amber)">9.8</span></div>
+            <div class="score-row"><span class="score-label">用户体验</span><div class="score-track"><div class="score-fill" style="width:90%;background:var(--accent-cyan)"></div></div><span class="score-val" style="color:var(--accent-cyan)">9.0</span></div>
+            <div class="score-row"><span class="score-label">AI技术深度</span><div class="score-track"><div class="score-fill" style="width:68%;background:var(--accent-purple)"></div></div><span class="score-val" style="color:var(--accent-purple)">6.8</span></div>
+            <div class="score-row"><span class="score-label">商业化成熟</span><div class="score-track"><div class="score-fill" style="width:82%;background:var(--accent-green)"></div></div><span class="score-val" style="color:var(--accent-green)">8.2</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s9-pricing">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#36;</span> 定价策略</div>
+            <div class="pricing-highlight">
+              <div class="pricing-row"><span class="pricing-plan">Headspace 月费</span><span class="pricing-cost">$12.99/月</span></div>
+              <div class="pricing-row"><span class="pricing-plan">Headspace 年费</span><span class="pricing-cost">$69.99/年</span></div>
+              <div class="pricing-row"><span class="pricing-plan">Headspace Care（含治疗师）</span><span class="pricing-cost">通过企业/保险</span></div>
+              <div class="pricing-row"><span class="pricing-plan">企业版 Headspace for Work</span><span class="pricing-cost">PEPM定制</span></div>
+            </div>
+          </div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9730;</span> 迭代方向</div><p>深度整合AI教练与冥想内容，打造全谱系平台；AI超个性化内容推荐；推进IPO；全球多语言市场拓展。可能2026年IPO。</p><div class="tag-row"><span class="mini-tag amber">品牌力</span><span class="mini-tag green">AI + 正念</span><span class="mini-tag purple">IPO预期</span><span class="mini-tag cyan">1亿+用户</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- #10 NeuroFlow -->
+<div class="company-section" id="sec-10">
+<div class="company-card">
+  <div class="card-top">
+    <div class="rank-num" style="background:linear-gradient(135deg,#34d399,#06b6d4);">10</div>
+    <div class="company-title-area">
+      <h2>NeuroFlow</h2>
+      <div class="company-chips">
+        <span class="chip">匹兹堡, 宾州</span><span class="chip">成立 2016</span><span class="chip">融资 ~$4500万</span>
+        <span class="status-pill live"><span class="status-pill-dot"></span>运营中</span>
+      </div>
+    </div>
+    <a href="https://www.neuroflow.com" target="_blank" class="link-btn">访问官网 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+  </div>
+  <div class="card-body">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="s10-core">核心分析</button>
+      <button class="tab-btn" data-tab="s10-pricing">定价与商业</button>
+    </div>
+    <div class="tab-panels">
+      <div class="tab-panel active" id="s10-core">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#9733;</span> 核心优势</div><p>专注行为健康数据分析和人群健康管理的基础设施层。AI风险分层系统在大规模人群中自动识别高风险个体并优先干预。嵌入式技术——深度集成EHR和现有医疗工作流。服务医疗系统、保险公司和企业雇主。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#9881;</span> 技术难点</div><p>跨系统数据整合和互操作性（FHIR/HL7标准）；AI风险预测模型的公平性和泛化能力；保护患者隐私的前提下进行有效数据聚合；与各类EHR系统的适配工程量巨大。</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#9741;</span> 关键产品</div><p><strong>NeuroFlow Platform</strong> — 行为健康数据分析和护理管理平台<br><strong>Risk Stratification Engine</strong> — AI风险分层引擎<br><strong>Population Health Dashboard</strong> — 人群心理健康趋势监测仪表盘</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9878;</span> 产品力评估</div>
+            <div class="score-row"><span class="score-label">数据能力</span><div class="score-track"><div class="score-fill" style="width:88%;background:var(--accent-purple)"></div></div><span class="score-val" style="color:var(--accent-purple)">8.8</span></div>
+            <div class="score-row"><span class="score-label">商业化成熟</span><div class="score-track"><div class="score-fill" style="width:68%;background:var(--accent-amber)"></div></div><span class="score-val" style="color:var(--accent-amber)">6.8</span></div>
+            <div class="score-row"><span class="score-label">增长潜力</span><div class="score-track"><div class="score-fill" style="width:82%;background:var(--accent-green)"></div></div><span class="score-val" style="color:var(--accent-green)">8.2</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" id="s10-pricing">
+        <div class="grid-2">
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#36;</span> 商业模式</div><p><strong>模式：</strong>B2B组织级SaaS许可<br><strong>客户：</strong>医疗系统/医院、健康计划/保险公司、企业雇主<br><strong>价值：</strong>降低行为健康相关的急诊和住院成本，用预防性筛查节省下游医疗支出</p></div>
+          <div class="info-block"><div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#9730;</span> 迭代方向</div><p>增强AI预测模型精准度和可解释性；拓展更多EHR系统集成；向保险公司提供行为健康风险管理工具；整合可穿戴设备被动数据进风险评估。</p><div class="tag-row"><span class="mini-tag green">风险分层AI</span><span class="mini-tag cyan">EHR集成</span><span class="mini-tag purple">人群健康</span><span class="mini-tag amber">可穿戴</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== COMPARISON TABLE ===== -->
+<section class="table-section" id="sec-table">
+  <div class="section-header">
+    <h2>十家公司横向对比</h2>
+    <p>从技术路线、产品形态、付费模式、融资规模等维度全景对比</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>公司</th><th>技术路线</th><th>核心产品</th><th>付费方</th><th>融资/估值</th><th>定价模式</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="https://www.springhealth.com" target="_blank">Spring Health</a></td><td>AI精准匹配+平台</td><td>企业心理健康福利平台</td><td>企业雇主</td><td>$5.98亿 / $33亿</td><td>PEPM $4-8</td><td><span class="status-pill live"><span class="status-pill-dot"></span>运营</span></td></tr>
+        <tr><td>2</td><td><a href="https://www.lyrahealth.com" target="_blank">Lyra Health</a></td><td>AI匹配+循证网络</td><td>企业心理健康综合平台</td><td>企业雇主</td><td>$9.15亿 / $46亿</td><td>PEPM $5-10</td><td><span class="status-pill live"><span class="status-pill-dot"></span>运营</span></td></tr>
+        <tr><td>3</td><td><a href="https://www.talkspace.com" target="_blank">Talkspace</a></td><td>AI辅助+远程治疗</td><td>在线治疗(文/音/视频)</td><td>DTC+B2B+保险</td><td>上市 TALK</td><td>$69-99/周</td><td><span class="status-pill ipo"><span class="status-pill-dot"></span>上市</span></td></tr>
+        <tr><td>4</td><td><a href="https://www.wysa.com" target="_blank">Wysa</a></td><td>AI对话+CBT/DBT</td><td>AI情绪支持聊天机器人</td><td>DTC+B2B+医疗</td><td>~$3600万</td><td>Free/$74.99年</td><td><span class="status-pill live"><span class="status-pill-dot"></span>运营</span></td></tr>
+        <tr><td>5</td><td><a href="https://woebothealth.com" target="_blank">Woebot</a></td><td>规则化CBT对话</td><td>Woebot App(已关停)</td><td>DTC+B2B</td><td>~$1.23亿</td><td>—</td><td><span class="status-pill dead"><span class="status-pill-dot"></span>关停</span></td></tr>
+        <tr><td>6</td><td><a href="https://eleos.health" target="_blank">Eleos Health</a></td><td>多模态LLM+Agentic</td><td>临床AI Copilot</td><td>B2B SaaS</td><td>~$1.13亿</td><td>按席位/量</td><td><span class="status-pill hot"><span class="status-pill-dot"></span>高速增长</span></td></tr>
+        <tr><td>7</td><td><a href="https://www.bighealth.com" target="_blank">Big Health</a></td><td>AI+处方级DTx</td><td>SleepioRx/DaylightRx</td><td>保险+企业+医疗</td><td>~$1.59亿</td><td>保险报销</td><td><span class="status-pill live"><span class="status-pill-dot"></span>运营</span></td></tr>
+        <tr><td>8</td><td><a href="https://www.kintsugihealth.com" target="_blank">Kintsugi</a></td><td>语音生物标记AI</td><td>Voice Biomarker API</td><td>B2B API</td><td>~$2800万</td><td>API调用量</td><td><span class="status-pill live"><span class="status-pill-dot"></span>运营</span></td></tr>
+        <tr><td>9</td><td><a href="https://www.headspace.com" target="_blank">Headspace</a></td><td>AI教练+正念内容</td><td>Headspace App+Care</td><td>DTC+B2B+保险</td><td>$4亿+ / ~$30亿</td><td>$12.99/月</td><td><span class="status-pill live"><span class="status-pill-dot"></span>运营</span></td></tr>
+        <tr><td>10</td><td><a href="https://www.neuroflow.com" target="_blank">NeuroFlow</a></td><td>AI风险分层+数据</td><td>行为健康数据平台</td><td>B2B(医疗/保险)</td><td>~$4500万</td><td>组织许可</td><td><span class="status-pill live"><span class="status-pill-dot"></span>运营</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== CHINA MARKET ===== -->
+<section class="table-section" id="sec-china">
+  <div class="section-header">
+    <h2>中国AI心理健康市场深度解读</h2>
+    <p>市场规模、头部玩家、商业模式、行业痛点与中美差异全景分析</p>
+  </div>
+
+  <!-- Market Overview -->
+  <div class="company-card" style="margin-bottom:32px;">
+    <div class="card-top" style="border-bottom:none;">
+      <div class="rank-num" style="background:linear-gradient(135deg,#ef4444,#f97316);font-size:1rem;">CN</div>
+      <div class="company-title-area">
+        <h2>中国市场全景概览</h2>
+        <div class="company-chips">
+          <span class="chip">泛心理健康市场 ~104亿元（2025）</span>
+          <span class="chip">心理咨询市场 300亿+元</span>
+          <span class="chip">CAGR 25-27%</span>
+          <span class="status-pill hot"><span class="status-pill-dot"></span>高速增长</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="cn-overview">市场概况</button>
+        <button class="tab-btn" data-tab="cn-players">头部玩家</button>
+        <button class="tab-btn" data-tab="cn-model">商业模式</button>
+        <button class="tab-btn" data-tab="cn-pain">行业痛点</button>
+        <button class="tab-btn" data-tab="cn-compare">中美对比</button>
+      </div>
+      <div class="tab-panels">
+        <!-- Overview -->
+        <div class="tab-panel active" id="cn-overview">
+          <div class="grid-2">
+            <div class="info-block">
+              <div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">&#128200;</span> 市场规模与增速</div>
+              <p>中国泛心理健康服务市场规模2025年预计达104.1亿元（沙利文数据），2020-2025年CAGR达27%。心理咨询市场已突破300亿元。职场人焦虑障碍患病率高达48%，抑郁风险检出率10.6%。全国精神障碍患病率为16.6%，约2.5亿人存在不同程度心理健康问题。但就诊率长期不足10%，巨大的供需缺口是行业核心机会。</p>
+            </div>
+            <div class="info-block">
+              <div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">&#128203;</span> 政策环境</div>
+              <p><strong>"健康中国2030"</strong> 将心理健康纳入国家战略规划，明确提出到2030年居民心理健康素养水平提升至30%。2026年2月，卫健委联合多部门进一步明确心理健康服务规范化发展路径。《精神卫生法》修订持续推进，数字疗法监管框架逐步完善。地方政府纷纷出台心理健康服务落地措施，学校心理健康筛查成为刚需。</p>
+            </div>
+            <div class="info-block">
+              <div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">&#128101;</span> 供给侧现状</div>
+              <p><strong>严重短缺：</strong>中国精神科执业医师仅约4.57万人（2021年），远低于WHO建议标准。持证心理咨询师在册人数约150万，但真正执业者不足10%。三甲医院精神科资源集中在一线城市，基层严重匮乏。AI被视为解决供给端瓶颈的关键技术手段。</p>
+            </div>
+            <div class="info-block">
+              <div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">&#127919;</span> 需求侧特征</div>
+              <p><strong>核心人群：</strong>Z世代和职场青年（18-35岁）是AI心理产品的主力用户，对数字化接受度高；青少年群体（学校场景）是政策驱动下的刚需市场；企业EAP市场刚起步但增速快。<br><strong>付费意愿：</strong>DTC付费意愿整体偏低（人均心理消费远低于欧美），B2B/B2G渠道更有商业化前景。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Players -->
+        <div class="tab-panel" id="cn-players">
+          <div class="info-block-label" style="color:var(--accent-purple);margin-bottom:20px;"><span class="icon" style="background:var(--accent-purple-soft)">&#127942;</span> 中国AI心理健康头部玩家全景</div>
+
+          <!-- Player 1: 好心情 -->
+          <div class="info-block" style="margin-bottom:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+              <div>
+                <strong style="font-size:1.05rem;">好心情</strong>
+                <span class="status-pill live" style="margin-left:8px;"><span class="status-pill-dot"></span>头部平台</span>
+              </div>
+              <a href="https://www.haoxinqing.com" target="_blank" class="link-btn" style="padding:6px 14px;font-size:0.78rem;">访问官网 <svg viewBox="0 0 20 20" fill="currentColor" style="width:12px;height:12px;"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+            </div>
+            <p>国内最大的互联网精神心理医疗平台，2025年初完成数亿元D轮融资（中信医疗等）。平台注册精神心理科医生超2万名，累计融资超5亿元。定位为"精神心理领域的京东健康"，提供在线问诊、处方、AI辅助诊断和患者管理全链条服务。正在积极推进与聆心智能合作，将AI大模型引入平台。</p>
+            <div class="tag-row"><span class="mini-tag pink">D轮 数亿元</span><span class="mini-tag purple">2万+医生</span><span class="mini-tag cyan">互联网医院</span><span class="mini-tag amber">医药闭环</span></div>
+          </div>
+
+          <!-- Player 2: 聆心智能 -->
+          <div class="info-block" style="margin-bottom:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+              <div>
+                <strong style="font-size:1.05rem;">聆心智能</strong>
+                <span class="status-pill hot" style="margin-left:8px;"><span class="status-pill-dot"></span>技术领先</span>
+              </div>
+              <a href="https://www.emohaa.com" target="_blank" class="link-btn" style="padding:6px 14px;font-size:0.78rem;">访问官网 <svg viewBox="0 0 20 20" fill="currentColor" style="width:12px;height:12px;"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+            </div>
+            <p>脱胎于清华大学黄民烈实验室（2021年成立），开发了国内首个心理大模型Emohaa。已完成Pre-A轮融资。2025年8月发布三款核心产品：<strong>AI心理测评系统</strong>（通过AI对话式评估替代传统量表）、<strong>AI双师互动心理课</strong>（面向校园场景）、<strong>聆心陪伴</strong>（7×24h情绪支持机器人）。Emohaa模型融入心理咨询三阶段理论，具备情绪识别、策略应对、共情表达三大能力。核心客户为学校和医疗机构。</p>
+            <div class="tag-row"><span class="mini-tag purple">清华系</span><span class="mini-tag cyan">心理大模型Emohaa</span><span class="mini-tag green">校园场景</span><span class="mini-tag amber">Pre-A轮</span></div>
+          </div>
+
+          <!-- Player 3: 望里科技 -->
+          <div class="info-block" style="margin-bottom:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+              <div>
+                <strong style="font-size:1.05rem;">望里科技</strong>
+                <span class="status-pill live" style="margin-left:8px;"><span class="status-pill-dot"></span>数字疗法</span>
+              </div>
+              <a href="https://www.wonderlab.cn" target="_blank" class="link-btn" style="padding:6px 14px;font-size:0.78rem;">访问官网 <svg viewBox="0 0 20 20" fill="currentColor" style="width:12px;height:12px;"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+            </div>
+            <p>精神心理数字疗法赛道领跑者。累计融资超2亿元（含B+轮数千万元，远毅资本投资）。核心产品<strong>"望里暖阳"</strong>已获得NMPA三类医疗器械注册证——这是国内精神心理数字疗法领域的重要里程碑。基于自研WonderLab大模型，提供针对抑郁、失眠、焦虑的AI数字化治疗方案。与北大六院、湘雅二院、上海精卫中心等顶级机构合作。</p>
+            <div class="tag-row"><span class="mini-tag green">三类证获批</span><span class="mini-tag purple">WonderLab大模型</span><span class="mini-tag pink">B+轮 2亿+</span><span class="mini-tag cyan">顶级医院合作</span></div>
+          </div>
+
+          <!-- Player 4: 壹心理 -->
+          <div class="info-block" style="margin-bottom:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+              <div>
+                <strong style="font-size:1.05rem;">壹心理</strong>
+                <span class="status-pill live" style="margin-left:8px;"><span class="status-pill-dot"></span>内容+服务</span>
+              </div>
+              <a href="https://www.xinli001.com" target="_blank" class="link-btn" style="padding:6px 14px;font-size:0.78rem;">访问官网 <svg viewBox="0 0 20 20" fill="currentColor" style="width:12px;height:12px;"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+            </div>
+            <p>国内最大的心理学科普和服务平台，用户超2亿。以"内容科普 → 心理测评 → 咨询匹配"为核心链路。已完成A++轮融资（头头是道投资）。平台聚合了数千名持证咨询师。正在引入AI进行智能测评和咨询师匹配推荐，但AI技术深度相对较浅，核心仍是"内容流量+咨询师平台"模式。</p>
+            <div class="tag-row"><span class="mini-tag amber">2亿+用户</span><span class="mini-tag purple">内容驱动</span><span class="mini-tag cyan">咨询师平台</span><span class="mini-tag green">A++轮</span></div>
+          </div>
+
+          <!-- Player 5: 简单心理 -->
+          <div class="info-block" style="margin-bottom:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+              <div>
+                <strong style="font-size:1.05rem;">简单心理</strong>
+                <span class="status-pill live" style="margin-left:8px;"><span class="status-pill-dot"></span>咨询平台</span>
+              </div>
+              <a href="https://www.jiandanxinli.com" target="_blank" class="link-btn" style="padding:6px 14px;font-size:0.78rem;">访问官网 <svg viewBox="0 0 20 20" fill="currentColor" style="width:12px;height:12px;"><path d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06z"/></svg></a>
+            </div>
+            <p>专业心理咨询匹配平台，强调咨询师资质审核和督导体系。聚合超900名严格筛选的咨询师。建立了"数据互通、流程协同、服务闭环"的一体化服务生态。正在探索AI在咨询匹配、初诊评估和督导辅助方面的应用。定位高端专业化，咨询师质量和用户口碑在行业领先。</p>
+            <div class="tag-row"><span class="mini-tag green">专业咨询师</span><span class="mini-tag purple">督导体系</span><span class="mini-tag cyan">高端定位</span></div>
+          </div>
+
+          <!-- Player 6: 虚之实 -->
+          <div class="info-block" style="margin-bottom:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+              <div>
+                <strong style="font-size:1.05rem;">虚之实科技</strong>
+                <span class="status-pill hot" style="margin-left:8px;"><span class="status-pill-dot"></span>VR+AI</span>
+              </div>
+            </div>
+            <p>杭州公司，专注AI+VR数字疗法。2025年底完成超5000万元A+轮融资。利用VR虚拟现实、人工智能和生物反馈技术进行精神心理干预，针对抑郁、焦虑、PTSD等适应症。代表了国内"沉浸式AI心理干预"的新技术路线。</p>
+            <div class="tag-row"><span class="mini-tag cyan">VR+AI</span><span class="mini-tag purple">生物反馈</span><span class="mini-tag amber">A+轮 5000万</span></div>
+          </div>
+
+          <!-- Player 7: 暖心壹疗 -->
+          <div class="info-block">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+              <div>
+                <strong style="font-size:1.05rem;">暖心壹疗</strong>
+                <span class="status-pill live" style="margin-left:8px;"><span class="status-pill-dot"></span>互联网医院</span>
+              </div>
+            </div>
+            <p>国内首创互联网心理医院模式，构建"医院+企业+患者"三方付费体系。获启迪之星等多轮融资。通过与线下精神专科医院合作，打造线上线下一体化的精神心理诊疗闭环。AI主要应用于患者分诊、治疗方案推荐和随访管理。</p>
+            <div class="tag-row"><span class="mini-tag green">互联网医院</span><span class="mini-tag pink">三方付费</span><span class="mini-tag purple">线上线下一体化</span></div>
+          </div>
+        </div>
+
+        <!-- Business Model -->
+        <div class="tab-panel" id="cn-model">
+          <div class="info-block-label" style="color:var(--accent-amber);margin-bottom:20px;"><span class="icon" style="background:var(--accent-amber-soft)">&#36;</span> 中国市场主要商业模式</div>
+          <div class="grid-2">
+            <div class="info-block">
+              <div class="info-block-label" style="color:var(--accent-purple);"><span class="icon" style="background:var(--accent-purple-soft)">1</span> 互联网医院模式</div>
+              <p><strong>代表：</strong>好心情、暖心壹疗<br><strong>逻辑：</strong>搭建精神心理科互联网医院，聚合医生资源，通过在线问诊、处方、药品配送形成医药闭环<br><strong>收入：</strong>问诊费、药品销售佣金、医院SaaS服务费<br><strong>优势：</strong>医疗级定位，可获得处方权和医保接入<br><strong>困难：</strong>依赖医生资源，获取执业医师的边际成本高</p>
+            </div>
+            <div class="info-block">
+              <div class="info-block-label" style="color:var(--accent-cyan);"><span class="icon" style="background:var(--accent-cyan-soft)">2</span> 内容+咨询师平台模式</div>
+              <p><strong>代表：</strong>壹心理、简单心理<br><strong>逻辑：</strong>通过心理科普内容获取流量，转化为测评和咨询师匹配服务<br><strong>收入：</strong>咨询师平台佣金（20-30%）、心理测评付费、课程/内容订阅<br><strong>优势：</strong>获客成本低（内容SEO），用户基数大<br><strong>困难：</strong>咨询师付费意愿不高，客单价天花板明显（300-800元/次）</p>
+            </div>
+            <div class="info-block">
+              <div class="info-block-label" style="color:var(--accent-green);"><span class="icon" style="background:var(--accent-green-soft)">3</span> AI心理大模型/SaaS模式</div>
+              <p><strong>代表：</strong>聆心智能<br><strong>逻辑：</strong>开发心理领域垂直大模型，以SaaS形式赋能学校、医院、企业<br><strong>收入：</strong>B端SaaS订阅费、API调用费、定制项目费<br><strong>优势：</strong>技术壁垒高，可规模化赋能多场景<br><strong>困难：</strong>心理大模型的安全性和准确性验证周期长，B端决策链长</p>
+            </div>
+            <div class="info-block">
+              <div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">4</span> 数字疗法（DTx）模式</div>
+              <p><strong>代表：</strong>望里科技、虚之实<br><strong>逻辑：</strong>开发获批的数字疗法产品，作为"数字处方"由医院开具<br><strong>收入：</strong>医院采购/患者自付、保险报销（未来）、药企合作<br><strong>优势：</strong>获三类证后可进入医疗支付体系，壁垒极高<br><strong>困难：</strong>NMPA注册周期长，医院进院流程复杂，医保覆盖尚未明确</p>
+            </div>
+            <div class="info-block grid-full">
+              <div class="info-block-label" style="color:var(--accent-amber);"><span class="icon" style="background:var(--accent-amber-soft)">5</span> B2G校园心理筛查模式（政策驱动新增长极）</div>
+              <p>2024-2025年，教育部和卫健委连续发文要求加强中小学生心理健康筛查和干预。这催生了一个全新的B2G市场——面向学校和教育局提供AI心理测评和干预系统。聆心智能的"AI双师互动心理课"和"AI心理测评系统"就是瞄准这一场景。全国约50万所中小学，3亿在校学生，政策驱动下这可能是中国AI心理健康最大的短期增量市场。</p>
+              <div class="tag-row"><span class="mini-tag green">政策驱动</span><span class="mini-tag purple">3亿学生</span><span class="mini-tag amber">B2G</span><span class="mini-tag cyan">刚需场景</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pain Points -->
+        <div class="tab-panel" id="cn-pain">
+          <div class="info-block-label" style="color:var(--accent-pink);margin-bottom:20px;"><span class="icon" style="background:var(--accent-pink-soft)">&#9888;</span> 行业核心痛点</div>
+          <div class="grid-2">
+            <div class="info-block" style="border-color:rgba(244,114,182,0.15);">
+              <div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">1</span> 就诊率极低，病耻感强</div>
+              <p>中国精神心理疾病就诊率长期不足10%（WHO数据），远低于欧美30-40%。社会对心理问题的污名化严重——很多人不愿承认自己有心理问题，更不愿去精神科就诊。AI匿名化的特点本应有助于降低病耻感门槛，但市场教育仍需大量时间和投入。</p>
+            </div>
+            <div class="info-block" style="border-color:rgba(244,114,182,0.15);">
+              <div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">2</span> 付费意愿低，支付方缺失</div>
+              <p>中国用户为心理服务的DTC付费意愿远低于欧美。心理咨询未纳入医保，商业保险覆盖有限。企业EAP市场刚起步，渗透率极低（不到5%的企业有EAP，美国超过90%）。缺乏像美国企业雇主福利这样成熟的"第三方支付方"，导致行业商业化困难。</p>
+            </div>
+            <div class="info-block" style="border-color:rgba(244,114,182,0.15);">
+              <div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">3</span> 专业人才极度短缺</div>
+              <p>精神科执业医师仅4.57万人（对比中国2.5亿潜在需求人群）。持证心理咨询师在册约150万，但真正执业者不足10%。2017年国家取消心理咨询师职业资格考试后，行业准入标准不统一，咨询师质量参差不齐。这既是痛点也是AI的最大机会——AI可以在筛查、测评和轻度干预层面部分替代人力。</p>
+            </div>
+            <div class="info-block" style="border-color:rgba(244,114,182,0.15);">
+              <div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">4</span> 监管框架不明确</div>
+              <p>AI心理产品的监管归属模糊——到底算医疗器械、消费品还是互联网信息服务？NMPA（国家药监局）对数字疗法有三类证路径（望里科技已获批），但大量AI心理聊天工具尚无明确监管框架。数据安全（个人心理数据属于高度敏感信息）的合规要求日趋严格。</p>
+            </div>
+            <div class="info-block" style="border-color:rgba(244,114,182,0.15);">
+              <div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">5</span> AI安全性与伦理风险</div>
+              <p>心理场景下AI的安全边界问题尤为突出：自杀风险识别与干预、未成年人保护、心理数据隐私等。国内目前缺乏专门针对AI心理产品的安全评估标准。此前已有AI聊天产品因在情感场景中出现不当引导而引发舆论关注。</p>
+            </div>
+            <div class="info-block" style="border-color:rgba(244,114,182,0.15);">
+              <div class="info-block-label" style="color:var(--accent-pink);"><span class="icon" style="background:var(--accent-pink-soft)">6</span> 临床验证体系薄弱</div>
+              <p>相比海外（Wysa有30+篇论文），国内AI心理产品的RCT临床试验数量和质量均不足。多数产品缺乏严格的临床有效性证据。这影响了产品在医疗端的公信力和推广。望里科技获三类证是行业突破，但整体临床验证水平仍有很大提升空间。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- China vs US -->
+        <div class="tab-panel" id="cn-compare">
+          <div class="info-block-label" style="color:var(--accent-purple);margin-bottom:20px;"><span class="icon" style="background:var(--accent-purple-soft)">&#127760;</span> 中美AI心理健康市场对比</div>
+          <div class="table-wrap">
+            <table style="min-width:700px;">
+              <thead><tr><th>维度</th><th>美国市场</th><th>中国市场</th></tr></thead>
+              <tbody>
+                <tr><td><strong>市场成熟度</strong></td><td>成熟期，头部公司已达独角兽规模</td><td>早期高速增长，格局未定</td></tr>
+                <tr><td><strong>融资规模</strong></td><td>头部公司$5-9亿，行业总融资$50亿+</td><td>头部公司数亿元人民币，行业总融资约20-30亿元</td></tr>
+                <tr><td><strong>核心支付方</strong></td><td>企业雇主福利（EAP）+ 商业保险</td><td>患者自费为主，B2G（学校）快速增长</td></tr>
+                <tr><td><strong>企业EAP渗透率</strong></td><td>>90%的大中型企业有EAP</td><td><5%的企业有EAP，起步阶段</td></tr>
+                <tr><td><strong>AI技术应用</strong></td><td>AI匹配、AI Chatbot、AI Copilot、语音生物标记</td><td>AI大模型对话、AI测评、AI辅助诊断、VR+AI</td></tr>
+                <tr><td><strong>监管体系</strong></td><td>FDA SaMD框架相对成熟</td><td>NMPA三类证路径存在，AI监管框架仍在完善</td></tr>
+                <tr><td><strong>临床验证</strong></td><td>大量RCT和同行评审论文</td><td>临床证据积累不足，少数公司获三类证</td></tr>
+                <tr><td><strong>核心机会</strong></td><td>深化企业福利 + AI Copilot赋能临床端</td><td>B2G校园筛查 + 互联网医院 + 数字疗法</td></tr>
+                <tr><td><strong>最大挑战</strong></td><td>LLM颠覆现有工具，监管跟不上技术</td><td>付费方缺失，病耻感强，专业人才短缺</td></tr>
+                <tr><td><strong>用户画像</strong></td><td>企业员工通过福利获取，有保险覆盖</td><td>Z世代主动搜索为主，自费为主</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-block" style="margin-top:16px;border-color:rgba(124,92,252,0.15);background:linear-gradient(135deg,rgba(124,92,252,0.04),rgba(34,211,238,0.02));">
+            <div class="info-block-label" style="color:var(--accent-purple);"><span class="icon" style="background:var(--accent-purple-soft)">&#128161;</span> PM洞察：中国市场的独特机会</div>
+            <p style="margin-bottom:12px;"><strong>1. B2G校园场景是最确定的短期增量</strong> — 政策刚需+3亿学生基数+采购预算明确，是目前商业化路径最清晰的场景。聆心智能的校园产品矩阵方向值得关注。</p>
+            <p style="margin-bottom:12px;"><strong>2. "互联网医院+AI"模式有独特优势</strong> — 中国互联网医院牌照体系成熟，好心情模式通过AI提升医生接诊效率和患者管理质量，可以快速规模化。</p>
+            <p style="margin-bottom:12px;"><strong>3. 数字疗法三类证是终极壁垒</strong> — 望里科技获批三类证的意义类似于美国Big Health获得FDA认证，这将打开医疗支付通道。但获证成本和周期是巨大门槛。</p>
+            <p><strong>4. AI陪伴类产品需警惕监管风险</strong> — 纯AI情感陪伴（如一些AI伴侣产品）在中国面临内容合规和未成年人保护的特殊监管风险，商业化需谨慎。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INSIGHTS ===== -->
+<section class="table-section" id="sec-insights">
+  <div class="section-header">
+    <h2>PM视角：行业洞察与战略建议</h2>
+    <p>从产品经理角度提炼的关键趋势、竞争格局判断和进入策略</p>
+  </div>
+  <div class="insight-grid">
+    <div class="insight-card">
+      <div class="insight-num">01</div>
+      <h3>六大技术路线分化</h3>
+      <p>AI心理健康已分化为六大路线：AI精准匹配平台、AI对话治疗、临床AI Copilot、处方级数字疗法、语音生物标记检测、人群数据分析基础设施。新进入者需明确选择赛道，而非试图全覆盖。</p>
+    </div>
+    <div class="insight-card">
+      <div class="insight-num">02</div>
+      <h3>LLM正在重塑竞争格局</h3>
+      <p>Woebot的关停是标志性信号——规则化垂直AI工具面临通用LLM的降维打击。未来竞争焦点从"能否做AI对话"转向"临床有效性验证、监管合规和数据护城河"。单纯的AI对话已不是壁垒。</p>
+    </div>
+    <div class="insight-card">
+      <div class="insight-num">03</div>
+      <h3>B2B企业福利是最佳GTM</h3>
+      <p>TOP 10中7家以B2B企业端为核心收入来源。DTC获客成本过高（$200-500/CAC），通过企业渠道批量获客更高效。心理健康福利已成为人才竞争标配，企业决策者（HR/CHRO）是关键说服对象。</p>
+    </div>
+    <div class="insight-card">
+      <div class="insight-num">04</div>
+      <h3>监管是最大变量</h3>
+      <p>Big Health凭FDA认证获得保险报销通道（利好），Woebot因FDA路径过长而耗尽资源（教训）。监管策略的选择将成为生死攸关的战略决策——需要找到"合规+速度"的平衡点。</p>
+    </div>
+    <div class="insight-card">
+      <div class="insight-num">05</div>
+      <h3>"供给侧"是蓝海</h3>
+      <p>Eleos Health的成功表明：不仅患者端有机会，临床治疗师端同样是巨大蓝海。治疗师burnout是行业系统性痛点，AI Copilot解决的是整个行业的供给侧效率问题。这个方向的竞争烈度远低于患者端。</p>
+    </div>
+    <div class="insight-card">
+      <div class="insight-num">06</div>
+      <h3>数据护城河 > 技术护城河</h3>
+      <p>在AI技术快速商品化的背景下，真正的护城河不在于"用了什么模型"，而在于积累了多少独有的临床数据、建立了多深的企业客户关系、获得了多强的临床验证证据。Spring Health和Lyra Health的领先本质是数据和关系的领先。</p>
+    </div>
+  </div>
+</section>
+
+</div><!-- end container -->
+
+<footer>
+  <p>数据来源：公开融资信息、公司官网、TechCrunch、STAT News、Omdena、F6S、SEC Filings 等公开资料</p>
+  <p>最后更新：2026年3月 · 产品力评分为基于公开信息的综合评估，仅供参考</p>
+</footer>
+
+<!-- ===== JS ===== -->
+<script>
+// Tab system
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const tabId = this.dataset.tab;
+    const card = this.closest('.company-card');
+    card.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    card.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    this.classList.add('active');
+    card.querySelector('#' + tabId).classList.add('active');
+  });
+});
+
+// Nav scroll
+document.querySelectorAll('.nav-pill').forEach(pill => {
+  pill.addEventListener('click', function() {
+    const target = this.dataset.target;
+    const el = document.getElementById(target);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+
+// Intersection observer for nav highlight
+const sections = document.querySelectorAll('.company-section, .table-section');
+const navPills = document.querySelectorAll('.nav-pill');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navPills.forEach(p => {
+        p.classList.toggle('active', p.dataset.target === id);
+      });
+    }
+  });
+}, { rootMargin: '-80px 0px -65% 0px', threshold: 0.05 });
+sections.forEach(s => observer.observe(s));
+
+// Animate score bars on scroll
+const scoreObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.score-fill').forEach(bar => {
+        const w = bar.style.width;
+        bar.style.width = '0%';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => { bar.style.width = w; });
+        });
+      });
+      scoreObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.info-block').forEach(block => {
+  if (block.querySelector('.score-fill')) scoreObserver.observe(block);
+});
+</script>
+
+</body>
+</html>
